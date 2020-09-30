@@ -11,10 +11,10 @@ import { CatchErrorInterceptor } from './interceptors/http-error.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { ShowPostsComponent } from './showposts/show.component';
-import { CreatePostsComponent } from './createposts/create.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './shared/services';
+import { ShowpostsComponent } from './showposts/showposts.component';
+import { CreatepostsComponent } from './createposts/createposts.component';
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -22,7 +22,7 @@ export function appInitializerFactory(authService: AuthService) {
 
 @NgModule({
   imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent,ShowPostsComponent,CreatePostsComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent,ProfileComponent, ShowpostsComponent, CreatepostsComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

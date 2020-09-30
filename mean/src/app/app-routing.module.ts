@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './shared/guards';
 import { HomeComponent } from './home/home.component';
-import { ShowPostsComponent } from './showposts/show.component';
-import { CreatePostsComponent } from './createposts/create.component';
+import { ShowpostsComponent } from './showposts/showposts.component';
+import { CreatepostsComponent } from './createposts/createposts.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
@@ -14,12 +14,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'showposts',
-    component: ShowPostsComponent
+    path: 'posts',
+    component: ShowpostsComponent
   },
   {
     path: 'createposts',
-    component: CreatePostsComponent
+    component: CreatepostsComponent
   },
   {
     path: 'profile',
