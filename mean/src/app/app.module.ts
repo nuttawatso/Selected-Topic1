@@ -16,6 +16,7 @@ import { AuthService } from './shared/services';
 import { ShowpostsComponent } from './showposts/showposts.component';
 import { CreatepostsComponent } from './createposts/createposts.component';
 
+
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
 }
