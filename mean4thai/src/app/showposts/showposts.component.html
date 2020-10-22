@@ -1,0 +1,28 @@
+
+<div style="padding-left: 20%; padding-right: 20%; padding-bottom: 10%">
+  <h1>ข้อมูล</h1>
+  <table>
+    <tr>
+      <th>รหัสนักศึกษา</th>
+      <th>ชื่อ</th>
+      <th>นามสกุล</th>
+      <th colspan="2">ลบ / แก้ไข</th>
+    </tr>
+    <tr *ngFor="let postdata of postdatas">
+      <td>{{ postdata.topic }}</td>
+      <td>{{ postdata.description }}</td>
+      <!-- <td>{{ postdata.sid }}</td>
+      <td>{{ postdata.first }}</td>
+      <td>{{ postdata.last }}</td> -->
+      <td>
+        <button mat-raised-button style="background-color: #ffa000">
+          แก้ไข
+        </button>
+      </td>
+      <td>
+        <!-- <a role="button" mat-raised-button style="background-color: #d32f2f">ลบ</a> -->
+        <a role="button" mat-raised-button (click)="deleteData(postdata._id)" style="background-color: #d32f2f">ลบ</a>
+      </td>
+    </tr>
+  </table>
+</div>
