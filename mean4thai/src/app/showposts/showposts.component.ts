@@ -27,5 +27,10 @@ export class ShowpostsComponent implements OnInit {
       console.log(this.postdatas);
     });
   }
+  deleteData(data: any) {
+    console.log(data);
+    this.postsService.deletePostdatas(data).subscribe((response: {}) => alert('ลบเรียบร้อย'));
+    this.fetchData();
+  }
 
 }
