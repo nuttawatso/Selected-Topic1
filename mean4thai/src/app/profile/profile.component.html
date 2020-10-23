@@ -85,7 +85,7 @@
                   <ng-container *ngFor="let postdata of postdatas ">
                   <tr *ngIf="user_data._id == postdata.user_data">
                     <td>{{ postdata.topic }}</td>
-                    <td>{{ postdata.description }}</td>
+                    <td><p class="minimiz">{{ postdata.description }}</p></td>
                     <td>{{ postdata.category }}</td>
 
                     <td>

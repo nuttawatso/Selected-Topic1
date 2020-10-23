@@ -25,3 +25,9 @@ td {
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
+.minimiz {
+  white-space: nowrap;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

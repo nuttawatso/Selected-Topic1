@@ -16,20 +16,21 @@
                         </span>
                     </div>
 
-<div style="padding-left: 20%; padding-right: 20%; padding-bottom: 10%">
+<div  style="padding-left: 20%; padding-right: 20%; padding-bottom: 10%">
   <table>
     <tr>
 
       <th>หัวข้อ</th>
       <th>รายละเอียด</th>
       <th>ประเภทเกมส์</th>
-      <th colspan="2">ผู้โพสต์</th>
+      <th colspan="2"></th>
     </tr>
 
     <tr *ngFor="let postdata of postdatas "   >
       <td>{{ postdata.topic }}</td>
-      <td>{{ postdata.description }}</td>
+      <td><p class="minimiz">{{ postdata.description }}</p></td>
       <td>{{ postdata.category }}</td>
+
       <!-- <td>{{ postdata.sid }}</td>
       <td>{{ postdata.first }}</td>
       <td>{{ postdata.last }}</td> -->

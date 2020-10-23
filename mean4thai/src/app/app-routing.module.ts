@@ -13,19 +13,22 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'posts/:dataID',
-    component: ShowpostsComponent
+    component: ShowpostsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'createposts',
-    component: CreatepostsComponent
+    component: CreatepostsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
 
   {

@@ -3788,6 +3788,12 @@ video {
 	font-size:15px;
 	margin-right:10px;
 }
+.minimiz {
+  white-space: nowrap;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 }
