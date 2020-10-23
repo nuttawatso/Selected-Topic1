@@ -17,6 +17,8 @@ import { AuthService } from './shared/services';
 import { ShowpostsComponent } from './showposts/showposts.component';
 import { CreatepostsComponent } from './createposts/createposts.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EditComponent } from './edit/edit.component';
+import { PostviewComponent } from './postview/postview.component';
 
 
 export function appInitializerFactory(authService: AuthService) {
@@ -25,7 +27,7 @@ export function appInitializerFactory(authService: AuthService) {
 
 @NgModule({
   imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent, ShowpostsComponent,ProfileComponent,CreatepostsComponent ],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, ShowpostsComponent,ProfileComponent,CreatepostsComponent, EditComponent, PostviewComponent ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

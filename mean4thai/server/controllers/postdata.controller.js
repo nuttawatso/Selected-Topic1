@@ -16,7 +16,8 @@ module.exports = {
   get,
   getAll,
   search,
-  deleteData
+  deleteData,
+  updateData,
 };
 
 async function insert(postdata) {
@@ -42,4 +43,8 @@ async function search(key, value) {
 
 async function deleteData(_id) {
   return await Postdata.findByIdAndDelete(_id)
+}
+
+async function updateData(_id,data) {
+  return Postdata.findByIdAndUpdate(_id, data);
 }

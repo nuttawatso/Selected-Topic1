@@ -12,6 +12,7 @@ router.route('/get/:_id').get(asyncHandler(get));
 router.route('/all').get(asyncHandler(getAll));
 router.route('/search').get(asyncHandler(search));
 router.route('/delete/:_id').delete(asyncHandler(deleteData));
+router.route('/update/:_id').put(asyncHandler(updateData));
 
 
 async function insert(req, res) {
@@ -38,4 +39,10 @@ async function deleteData(req, res) {
   let all_postdatas = await postdataCtrl.deleteData(req.params['_id']);
   res.json(all_postdatas);
 }
+
+async function updateData(req, res) {
+  let all_reviews = await postdataCtrl.updateData(req.params['_id'],req.body);
+  res.json(all_reviews);
+}
+
 

@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
  */
 const PostdataSchema = new mongoose.Schema(
   {
+    user_data :{ type: String, required: true },
     topic:     { type: String, required: true },
     description:      { type: String, required: true },
     category:      { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
-    user_data :{ type: String, required: true },
 
     // sid: { type: String, required: true },
     // first: { type: String, required: true },

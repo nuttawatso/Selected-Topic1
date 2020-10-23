@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { ShowpostsComponent } from './showposts/showposts.component';
 import { CreatepostsComponent } from './createposts/createposts.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { EditComponent } from './edit/edit.component';
+import { PostviewComponent } from '../app/postview/postview.component'
 
 
 const routes: Routes = [
@@ -28,6 +29,16 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'viewdata/:dataId',
+    component: PostviewComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'edit/:dataId',
+    component: EditComponent,
     canActivate: [AuthGuard],
   },
 

@@ -94,9 +94,16 @@
                       </button>
                     </td>
                     <td>
-                      <!-- <a role="button" mat-raised-button style="background-color: #d32f2f">ลบ</a> -->
-                      <a  role="button" mat-raised-button (click)="deleteData(postdata._id)" style="background-color: #d32f2f">ลบ</a>
+                      <button  mat-raised-button (click)="deleteData(postdata._id)" style="background-color: #d32f2f" >
+                        ลบ
+                      </button>
                     </td>
+                    <td>
+                      <button  [routerLink]="['/edit',postdata._id]" mat-raised-button style="background-color: #66FF99" >
+                        แก้ไข
+                      </button>
+                    </td>
+                    
                   </tr>
                   </ng-container>
                 </table>
