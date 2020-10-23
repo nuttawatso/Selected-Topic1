@@ -19,26 +19,26 @@
 <div style="padding-left: 20%; padding-right: 20%; padding-bottom: 10%">
   <table>
     <tr>
+
       <th>หัวข้อ</th>
-      <th>ชื่อผู้โพสต์</th>
+      <th>รายละเอียด</th>
       <th>ประเภทเกมส์</th>
-      <th colspan="2">ลบ</th>
+      <th colspan="2">ผู้โพสต์</th>
     </tr>
-    <tr *ngFor="let postdata of postdatas">
+
+    <tr *ngFor="let postdata of postdatas "   >
       <td>{{ postdata.topic }}</td>
       <td>{{ postdata.description }}</td>
+      <td>{{ postdata.category }}</td>
       <!-- <td>{{ postdata.sid }}</td>
       <td>{{ postdata.first }}</td>
       <td>{{ postdata.last }}</td> -->
       <td>
-        <!-- <button mat-raised-button style="background-color: #ffa000">
-          แก้ไข
-        </button> -->
+        <button   [routerLink]="['/posts',postdata._id]" mat-raised-button style="background-color: #ffa000" >
+          ดูโพสต์
+        </button>
       </td>
-      <td>
-        <!-- <a role="button" mat-raised-button style="background-color: #d32f2f">ลบ</a> -->
-        <a role="button" mat-raised-button (click)="deleteData(postdata._id)" style="background-color: #d32f2f">ลบ</a>
-      </td>
+
     </tr>
   </table>
 </div>
@@ -89,9 +89,6 @@
                             <div class="card-header">tag</div>
 
 
-                            <div class="card-body">
-                              <p>ใส่ข้อมูล</p>
-                            </div>
                         </div>
                   <div class="card mb-4 text-center wow fadeIn">
                       <div class="card-header">ว่างๆ</div>

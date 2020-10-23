@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 import { PostsService } from '../service/Posts.service';
+import { AuthService } from '@app/shared/services';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit  {
+
   postdatas: any;
-  postdataAdd = {
-    'sid': null,
-    'first': '',
-    'last': ''
-    // 'title': '',
-    // 'description': ''
-  }
-  constructor(private postsService: PostsService) { }
+  user_data: any;
+
+  constructor(private postsService: PostsService,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.fetchData();
+    this.authService.getUser().subscribe(data => this.user_data = data);
   }
   fetchData() {
     this.postsService.getPostdatas().subscribe(response => {
@@ -27,13 +26,14 @@ export class HomeComponent implements OnInit {
     });
   }
   submitReviewAdd() {
-    console.log(this.postdataAdd);
+    // console.log(this.postdataAdd);
     this.fetchData();
-    this.postsService.postPostdatas(this.postdataAdd).subscribe((response: {}) => alert('บันทึกเรียบร้อย'));
+    // this.postsService.postPostdatas(this.postdataAdd).subscribe((response: {}) => alert('บันทึกเรียบร้อย'));
   }
   deleteData(data: any) {
     console.log(data);
     this.postsService.deletePostdatas(data).subscribe((response: {}) => alert('ลบเรียบร้อย'));
     this.fetchData();
   }
+
 }

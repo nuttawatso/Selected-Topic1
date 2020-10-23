@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../service/Posts.service';
+import { Category } from './Category';
+import { AuthService } from '@app/shared/services';
+
 
 @Component({
   selector: 'app-createposts',
@@ -7,19 +10,32 @@ import { PostsService } from '../service/Posts.service';
   styleUrls: ['./createposts.component.css']
 })
 export class CreatepostsComponent implements OnInit {
+  category = Category ;
   postdatas: any;
+  selectedValue : any;
+  user_data:any;
   postdataAdd = {
-    // 'sid': null,
-    // 'first': '',
-    // 'last': ''
+    'category':'',
     'topic': '',
-    'description': ''
+    'description': '',
+    'user_data': '',
+
   }
 
-  constructor(private postsService: PostsService ) { }
+
+  constructor(private postsService: PostsService,
+    private authService: AuthService ) { }
 
   ngOnInit() {
     this.fetchData();
+    this.authService.getUser().subscribe(data => this.user_data = data);
+    this.postdataAdd = {
+      'category':'',
+      'topic': '',
+      'description': '',
+      'user_data': this.user_data._id,
+    }
+
   }
   fetchData() {
     this.postsService.getPostdatas().subscribe(response => {

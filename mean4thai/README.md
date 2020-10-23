@@ -174,3 +174,10 @@ node scripts/init-students.js
 ```
 
 ## 7. เรียกดูข้อมูลได้จาก `http://localhost:4000/api/student/all`
+
+
+
+ แนะนำ
+  docker-compose up --build 
+  docker-compose up -d    
+  

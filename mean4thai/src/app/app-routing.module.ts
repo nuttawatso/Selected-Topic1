@@ -8,6 +8,7 @@ import { CreatepostsComponent } from './createposts/createposts.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -15,7 +16,7 @@ const routes: Routes = [
     //canActivate: [AuthGuard],
   },
   {
-    path: 'posts',
+    path: 'posts/:dataID',
     component: ShowpostsComponent
   },
   {

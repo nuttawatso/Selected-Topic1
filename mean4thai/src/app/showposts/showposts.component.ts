@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../service/Posts.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router, ParamMap } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-showposts',
@@ -7,19 +10,31 @@ import { PostsService } from '../service/Posts.service';
   styleUrls: ['./showposts.component.css']
 })
 export class ShowpostsComponent implements OnInit {
+  id:any;
   postdatas: any;
   postdataAdd = {
-    // 'sid': null,
-    // 'first': '',
-    // 'last': ''
+    'id':'',
     'topic': '',
-    'description': ''
+    'description': '',
+    'category':''
   }
 
-  constructor(private postsService: PostsService) { }
+  constructor(private postsService: PostsService, private route: ActivatedRoute,) { }
 
-  ngOnInit() {
-    this.fetchData();
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.id =params.get('dataID');
+    });
+    this.postsService.getshow(this.id).subscribe(response => {
+      this.postdataAdd = {
+        'id':response[0]._id,
+        'topic': response[0].topic,
+        'description': response[0].description,
+        'category':response[0].category,
+      }
+      console.log(this.postdataAdd);
+
+    });
   }
   fetchData() {
     this.postsService.getPostdatas().subscribe(response => {
@@ -27,10 +42,7 @@ export class ShowpostsComponent implements OnInit {
       console.log(this.postdatas);
     });
   }
-  deleteData(data: any) {
-    console.log(data);
-    this.postsService.deletePostdatas(data).subscribe((response: {}) => alert('ลบเรียบร้อย'));
-    this.fetchData();
-  }
+
+
 
 }

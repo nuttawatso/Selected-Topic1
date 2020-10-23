@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,5 +24,8 @@ export class PostsService {
   }
   deletePostdatas(data: any): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/delete/${data}`, this.httpOptions);
+  }
+  getshow(_id:any): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/get/${_id}`);
   }
 }
