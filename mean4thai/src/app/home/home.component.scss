@@ -1,3 +1,5 @@
+
+
 .example-icon {
   padding: 0 14px;
 }
@@ -31,3 +33,70 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+main {
+  background-color: #272727;
+}
+
+.example-card {
+  max-width: 400px;
+  margin: 10px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.bg-card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: url('../../assets/bg-card.jpg');
+  display: flex;
+
+}
+
+.cardd {
+  background-color: black;
+  color: white;
+  margin: auto;
+}
+
+.advice {
+  color: white !important;
+}
+
+.mat-tab,
+.mat-tab-group {
+  color: white;
+  margin-bottom: 48px;
+}
+
+.rec {
+  width: 150px;
+  margin: 18px;
+
+}
+.advice .mat-card-image:first-child {
+  margin: 15px !important;
+}
+
+::ng-deep.mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled),
+::ng-deep.mat-tab-label.mat-tab-label-active.cdk-keyboard-focused:not(.mat-tab-disabled) {
+
+  color: white;
+  opacity: 1;
+}
+
+::ng-deep.mat-tab-label {
+  color: white;
+}
+
+.mat-list-icon {
+  color: rgba(92, 92, 92, 0.54);
+}
+
+.logo {
+  height: 5px;
+}
+
