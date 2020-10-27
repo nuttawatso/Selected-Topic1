@@ -83,7 +83,7 @@
                     <th colspan="2"></th>
                   </tr>
                   <ng-container *ngFor="let postdata of postdatas ">
-                  <tr *ngIf="user_data._id == postdata.user_data">
+                  <tr *ngIf="user_data._id == postdata.user_data ">
                     <td>{{ postdata.topic }}</td>
                     <td><p class="minimiz">{{ postdata.description }}</p></td>
                     <td>{{ postdata.category }}</td>
@@ -103,7 +103,7 @@
                         แก้ไข
                       </button>
                     </td>
-                    
+
                   </tr>
                   </ng-container>
                 </table>

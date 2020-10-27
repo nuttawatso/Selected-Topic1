@@ -57,54 +57,56 @@
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-1">
               <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                {{postdataAdd.description}}
+                {{postdataAdd.description}}`
               </div>
             </div>
           </div>
 
           <div class="mt-10 py-10 border-t border-gray-300 text-center">
             <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- <section class="content-item" id="comments">
+<section class="content-item" id="comments">
     <div class="px-6 container ">
     	<div class="row px-00">
             <div class="col-sm-8 ">
 
                 <h3>Comments</h3>
-
-                COMMENT 1 - START -->
-                <!-- <div class="media"> -->
-                    <!-- <a class="pull-left" href="#"><img class="media-object" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a> -->
-                    <!-- <div class="media-body">
-                        <h4 class="media-heading">แฟ้ม</h4>
-                        <p>ทำไม่ได้</p>
+                <ng-container *ngFor="let comment of comments ">
+               <div class="media" *ngIf="postdataAdd.id == comment.id_post" >
+                   <a class="pull-left" href="#"><img class="media-object" src="https://picsum.photos/id/237/200/300" alt=""></a>
+                  <div class="media-body">
+                        <h4 class="media-heading">ผู้ใช้งาน :{{user_data.fullname}}</h4>
+                        <p><td>{{ comment.description }}</td></p>
                         <ul class="list-unstyled list-inline media-detail pull-left">
-                            <li><i class="fa fa-calendar"></i>27/02/2014</li>
+                            <li><i class="fa fa-calendar"></i>{{comment.createdAt | date :'short'}}</li>
+
                         </ul>
                     </div>
-                </div> -->
-                <!-- COMMENT 1 - END -->
+                </div>
+              </ng-container>
+                COMMENT 1 - END
 
 
 
-                <!-- <form>
-                	<h3 class="pull-left">New Comment ทำไม่ได้</h3>
+                <form>
+                	<h3 class="pull-left">New Comment </h3>
                     <fieldset>
                         <div class="row">
                             <div class="col-sm-3 col-lg-2 hidden-xs">
-                            	<img class="img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                            	<img class="img-responsive" src="https://picsum.photos/id/237/200/300" alt="">
                             </div>
                             <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="message" placeholder="Your message" required=""></textarea>
+                                <textarea class="form-control" id="message" placeholder="Your message" required="" name="description" [(ngModel)]="commentAdd.description"></textarea>
                             </div>
                         </div>
                     </fieldset>
-                    <button type="submit" class="btn btn-outline-info pull-right">Submit</button>
-                </form>
+                    <button (click)="submitReviewAdd()" type="submit" class="btn btn-outline-info pull-right" http-equiv="refresh" content="1">Submit</button>
+                    <!-- {{ commentAdd | json}} -->
+                  </form>
 
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
           </div>
         </div>
