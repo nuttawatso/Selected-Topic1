@@ -3,7 +3,7 @@ import { PostsService } from '../service/Posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router, ParamMap } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
-import { CommentService } from '../service/comment.service';
+import { CommentService } from '../service/Comment.service';
 import { AuthService } from '@app/shared/services';
 @Component({
   selector: 'app-showposts',
