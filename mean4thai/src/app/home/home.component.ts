@@ -1,4 +1,4 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PostsService } from '../service/Posts.service';
 import { AuthService } from '@app/shared/services';
 
@@ -7,8 +7,8 @@ import { AuthService } from '@app/shared/services';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit  {
-
+export class HomeComponent implements OnInit {
+  panelOpenState = false;
   postdatas: any;
   user_data: any;
 

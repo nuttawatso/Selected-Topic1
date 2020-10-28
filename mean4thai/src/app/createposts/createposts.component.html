@@ -1,35 +1,97 @@
-<div class="content">
-  <mat-card class="example-card content">
-    <mat-card-content>
-      <span class="topic">Post</span>
-      <form class="example-form">
-        <mat-form-field class="example-full-width-height">
-          <mat-label>Topic</mat-label>
-          <input matInput placeholder="Enter your topic." value="" name="topic" [(ngModel)]="postdataAdd.topic">
-        </mat-form-field>
-        <mat-form-field class="example-full-width-height">
-          <mat-label>Description</mat-label>
-          <textarea matInput placeholder="Enter your description." name="description" [(ngModel)]="postdataAdd.description" ></textarea>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <form>
-        <mat-form-field appearance="fill">
-          <mat-label>Category</mat-label>
-          <mat-select [(ngModel)]="postdataAdd.category" name="category">
-            <mat-option  *ngFor="let categorys of category" [value]="categorys.value">
-              {{categorys.viewValue}}
-            </mat-option>
-          <!-- <textarea matInput placeholder="Enter your category." name="category" [(ngModel)]="postdataAdd.category" ></textarea> -->
-          </mat-select>
-        </mat-form-field>
-        <!-- <p> Selected category: {{selectedValue}} </p> -->
-      </form>
-    </mat-card-actions>
-    <mat-card-actions>
-      <button mat-button>Cancle</button>
-      <button mat-button (click)="submitReviewAdd()" routerLink="/">Enter</button>
-    </mat-card-actions>
-  </mat-card>
+
+
+  <main class="mt-6 pt-6">
+    <section class="title">
+      <div class="container">
+        <p style="padding-top: 90px;">CREATE POST</p>
+      </div>
+    </section>
+    <!-- <img class="d-block w-100" src="../assets/2.jpg" alt="First slide"> -->
+    <div class="container containerr center">
+      <!-- <section class="mt-6 mt-50"> -->
+      <!-- <mat-card class="example-card content"> -->
+      <mat-card-content>
+        <!-- <span class="topic">CREATE POST</span>
+        <hr> -->
+        <form class="example-form">
+          <mat-form-field class="example-full-width-height">
+            <mat-label>Topic</mat-label>
+            <input matInput placeholder="Enter your topic." value="" name="topic" [(ngModel)]="postdataAdd.topic">
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width-height">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter your description." name="description" style="height: 100px;"
+              [(ngModel)]="postdataAdd.description"></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <br>
+      <mat-card-actions>
+        <form>
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Category</mat-label>
+            <mat-select [(ngModel)]="postdataAdd.category" name="category">
+              <mat-option *ngFor="let categorys of category" [value]="categorys.value">
+                {{categorys.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </mat-card-actions>
+      <br>
+      <mat-card-actions>
+        <button class="cl" style="margin-right: 10%;" mat-button routerLink="/">CANCLE</button>
+      </mat-card-actions>
+      <mat-card-actions>
+        <button class="cl" style="margin-left: 10%;" mat-button (click)="submitReviewAdd()" routerLink="/">SUBMIT POST</button>
+      </mat-card-actions>
+      <!-- </mat-card> -->
+      <!-- </section> -->
+    </div>
+  </main>
+
+
+<div class="footer">
+  <div class="container">
+    <section class="mt-0">
+      <div class="row advice"  style="padding-top: 55px;">
+        <div class="col-md-3 mb-4 ">
+          <h3>REVIEWS</h3>
+          <p>Latest Reviewws</p>
+          <p>PC</p>
+          <p>PS4</p>
+          <p>Xbox One</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3>NEWS</h3>
+          <p>Video</p>
+          <p>Hardware</p>
+          <p>In Character</p>
+          <p>E-sport</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3>SHOWS</h3>
+          <p>fallout 4 shoe</p>
+          <p>GameSpot News</p>
+          <p>GameSpot of Thrones</p>
+          <p>New Releases</p>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h3>COMMUNITY</h3>
+          <p>Forums</p>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Twich</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
 </div>
+
+<footer class="page-footer text-center font-small mdb-color  wow fadeIn">
+  <div class="footer-copyright py-3">
+   &copy; Copyright 2020
+  </div>
+</footer>

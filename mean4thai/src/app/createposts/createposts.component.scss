@@ -1,30 +1,30 @@
 .example-card {
-    max-width: 70%;
-    margin: auto;
-  }
+  margin: auto;
+}
 
-  .content{
-    padding: 50px;
-  }
+.content{
+  padding-top: 50px;
+}
 
-  .example-form {
-    min-width: 100%;
-    max-width: 100%;
-    width: 100%;
-  }
+.example-form {
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+}
 
-  .example-full-width-height {
-    width: 100%;
-    height: 100%;
-  }
+.example-full-width-height {
+  width: 100%;
+  height: 100%;
+}
 
-  .topic{
-    font-size: 20px;
-  }
+.topic{
+  font-size: 20px;
+  // color: white;
+}
 
-  .font-all{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+.font-all{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 
 
@@ -46,10 +46,11 @@
 
 .footer {
   background-image: url('../../assets/bgggg.jpeg');
-  /* background-color: #ddd; */
+  // background-color: #ddd;
   height: 300px;
   width: 100%;
 }
+
 .title{
   font-size: 40px;
   background: linear-gradient(90deg, rgb(0, 0, 0) 0%,rgba(13,65,91,1) 100%);

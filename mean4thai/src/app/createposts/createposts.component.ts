@@ -7,7 +7,7 @@ import { AuthService } from '@app/shared/services';
 @Component({
   selector: 'app-createposts',
   templateUrl: './createposts.component.html',
-  styleUrls: ['./createposts.component.css']
+  styleUrls: ['./createposts.component.scss']
 })
 export class CreatepostsComponent implements OnInit {
   category = Category ;

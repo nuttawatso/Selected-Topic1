@@ -3685,3 +3685,26 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.footer {
+  background-image: url('../../assets/bgggg.jpeg');
+  background-color: #ddd;
+  height: 300px;
+  width: 100%;
+}
+
+.advice {
+  color: white !important;
+}
+
+.cl {
+  background: linear-gradient(90deg, rgba(13,65,91,1) 0%, rgba(24,24,24,1) 100%);
+  color: white;
+  height: 50px;
+  width: 150px;
+  margin-left: 20px;
+}
+
+.topic{
+  font-size: 20px !important;
+}

@@ -1,117 +1,174 @@
-
 <main class="profile-page">
   <section class="relative block h-500-px">
-    <div
-      class="absolute top-0 w-full h-full bg-center bg-cover"
-      style="
-        background-image: url('https://images.pexels.com/photos/3829227/pexels-photo-3829227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-      "
-    >
-      <span
-        id="blackOverlay"
-        class="w-full h-full absolute opacity-50 bg-black"
-
-      ></span>
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
+        background-image: url('../../assets/bg-card.jpg');
+      ">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
     </div>
-    <div
-      class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
-      style="transform: translateZ(0);"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-gray-300 fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+      style="transform: translateZ(0);">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </section>
   <section class="relative py-16 bg-gray-300">
     <div class="container mx-auto px-4">
-      <div
-        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
-      >
-        <div class="px-6">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="px-6 mt-10">
+          <p style="font-size: 13px;">Category - {{postdataAdd.category}}</p> <br>
+          <p style="font-size: 30px;">{{postdataAdd.topic}}</p>
+          <br>
+          <hr>
           <div class="flex flex-wrap justify-center">
-            <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-
-
-            </div>
-            <div
-              class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
-            >
-              <div  *ngFor="let postdata of postdatas" class="py-6 px-3 mt-32 sm:mt-0  text-center" >
-
-              <div class="mb-2 text-gray-700">
-
+            <!-- <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+            </div> -->
+            <!-- <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
+              <div *ngFor="let postdata of postdatas" class="py-6 px-3 mt-32 sm:mt-0  text-center">
+                <div class="mb-2 text-gray-700">
+                </div>
               </div>
-
-              </div>
-            </div>
+            </div> -->
             <div class="w-full lg:w-4/12 px-4 lg:order-1">
               <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                {{postdataAdd.description}}`
+                {{postdataAdd.description}}
               </div>
             </div>
           </div>
+          <!-- </section> -->
+        </div>
+        <div class="px-5 mt-10 p-5" id="comments">
+          <h2 style="font-size: 20px;">COMMENTS</h2>
+          <hr style="margin-bottom: 25px; width: 5%;">
+          <ng-container *ngFor="let comment of comments ">
+            <div class="media" *ngIf="postdataAdd.id == comment.id_post">
+              <mat-icon mat-list-icon>sports_esports</mat-icon>
+              <div class="media-body">
+                <h3 class="media-heading">{{user_data.fullname}}</h3>
+                <p>
+                  <td>{{ comment.description }}</td>
+                </p>
+                <ul class="list-unstyled list-inline media-detail pull-left">
+                  <li>{{comment.createdAt | date :'short'}}</li>
+                </ul>
 
-          <div class="mt-10 py-10 border-t border-gray-300 text-center">
-            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<section class="content-item" id="comments">
-    <div class="px-6 container ">
-    	<div class="row px-00">
-            <div class="col-sm-8 ">
-
-                <h3>Comments</h3>
-                <ng-container *ngFor="let comment of comments ">
-               <div class="media" *ngIf="postdataAdd.id == comment.id_post" >
-                   <a class="pull-left" href="#"><img class="media-object" src="https://picsum.photos/id/237/200/300" alt=""></a>
-                  <div class="media-body">
-                        <h4 class="media-heading">ผู้ใช้งาน :{{user_data.fullname}}</h4>
-                        <p><td>{{ comment.description }}</td></p>
-                        <ul class="list-unstyled list-inline media-detail pull-left">
-                            <li><i class="fa fa-calendar"></i>{{comment.createdAt | date :'short'}}</li>
-
-                        </ul>
-                    </div>
-                </div>
-              </ng-container>
-                COMMENT 1 - END
-
-
-
-                <form>
-                	<h3 class="pull-left">New Comment </h3>
-                    <fieldset>
-                        <div class="row">
-                            <div class="col-sm-3 col-lg-2 hidden-xs">
-                            	<img class="img-responsive" src="https://picsum.photos/id/237/200/300" alt="">
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                <textarea class="form-control" id="message" placeholder="Your message" required="" name="description" [(ngModel)]="commentAdd.description"></textarea>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <button (click)="submitReviewAdd()" type="submit" class="btn btn-outline-info pull-right" http-equiv="refresh" content="1">Submit</button>
-                    <!-- {{ commentAdd | json}} -->
-                  </form>
+              </div>
 
             </div>
-        </div>
-    </div>
-</section>
+          </ng-container>
+          <h2> NEW COMMEN </h2>
+          <form>
+            <fieldset>
+              <div class="row">
+                <!-- <div class="col-sm-3 col-lg-2 hidden-xs"> -->
+                <mat-icon mat-list-icon>sports_esports</mat-icon>
+                <!-- </div> -->
+                <div class="form-group col-xs-10 col-sm-9 col-lg-10">
+                  <textarea class="form-control" id="message" placeholder="Your message" required="" name="description"
+                    [(ngModel)]="commentAdd.description"></textarea>
+                </div>
+                <!-- {{ commentAdd | json}} -->
+                <button mat-raised-button (click)="submitReviewAdd()" class="cl">SUBMIT</button>
+              </div>
 
-          </div>
+            </fieldset>
+          </form>
+
         </div>
       </div>
     </div>
+    <!-- </div> -->
+    <!-- <div class="mt-10 py-10 border-t border-gray-300 text-center"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <section class="content-item" id="comments"> -->
+    <!-- <div class="container mx-auto px-4" id="comments"> -->
+      <!-- <div class="row"> -->
+      <!-- <div class="px-5 mt-10 p-5">
+        <h2 style="font-size: 20px;">COMMENTS</h2>
+        <hr style="margin-bottom: 25px; width: 5%;">
+        <ng-container *ngFor="let comment of comments ">
+          <div class="media" *ngIf="postdataAdd.id == comment.id_post">
+            <mat-icon mat-list-icon>sports_esports</mat-icon>
+            <div class="media-body">
+              <h3 class="media-heading">{{user_data.fullname}}</h3>
+              <p>
+                <td>{{ comment.description }}</td>
+              </p>
+              <ul class="list-unstyled list-inline media-detail pull-left">
+                <li>{{comment.createdAt | date :'short'}}</li>
+              </ul>
+
+            </div>
+
+          </div>
+        </ng-container>
+        <h2> NEW COMMEN </h2>
+        <form>
+          <fieldset>
+            <div class="row">
+              <div class="col-sm-3 col-lg-2 hidden-xs">
+      <mat-icon mat-list-icon>sports_esports</mat-icon>
+      </div>
+      <div class="form-group col-xs-10 col-sm-9 col-lg-10">
+        <textarea class="form-control" id="message" placeholder="Your message" required="" name="description"
+          [(ngModel)]="commentAdd.description"></textarea>
+      </div>
+      {{ commentAdd | json}}
+      <button mat-raised-button (click)="submitReviewAdd()" class="cl">SUBMIT</button>
+    </div>
+
+    </fieldset>
+    </form>
+
+    </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
   </section>
+
 </main>
 
+
+<div class="footer">
+  <div class="container">
+    <section class="mt-0">
+      <div class="row advice" style="padding-top: 55px;">
+        <div class="col-md-3 mb-4 ">
+          <h3>REVIEWS</h3>
+          <p>Latest Reviewws</p>
+          <p>PC</p>
+          <p>PS4</p>
+          <p>Xbox One</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3>NEWS</h3>
+          <p>Video</p>
+          <p>Hardware</p>
+          <p>In Character</p>
+          <p>E-sport</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h3>SHOWS</h3>
+          <p>fallout 4 shoe</p>
+          <p>GameSpot News</p>
+          <p>GameSpot of Thrones</p>
+          <p>New Releases</p>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h3>COMMUNITY</h3>
+          <p>Forums</p>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Twich</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<footer class="page-footer text-center font-small mdb-color  wow fadeIn">
+  <div class="footer-copyright py-3">
+    &copy; Copyright 2020
+  </div>
+</footer>
