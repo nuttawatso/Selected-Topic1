@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'posts/:dataID',
     component: ShowpostsComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'createposts',
