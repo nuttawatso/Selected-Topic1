@@ -151,7 +151,6 @@ main {
   bottom: 20px;
   left: 22px;
   width: 100%;
-
 }
 
 .custom-tag-small {
@@ -167,4 +166,11 @@ main {
   border-radius: 0 26px 26px 0;
   line-height: initial;
   display: none;
+}
+
+.minimiz {
+  white-space: nowrap;
+  width: 450px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

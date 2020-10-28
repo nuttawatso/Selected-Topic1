@@ -3701,10 +3701,15 @@ td {
   background: linear-gradient(90deg, rgba(13,65,91,1) 0%, rgba(24,24,24,1) 100%);
   color: white;
   height: 50px;
-  width: 150px;
-  margin-left: 20px;
+  width: 100px;
+  margin-left: 10px;
 }
 
 .topic{
   font-size: 20px !important;
+}
+
+
+.ng-star-inserted{
+  width: 100%;
 }

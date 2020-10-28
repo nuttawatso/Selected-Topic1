@@ -217,7 +217,7 @@
             <mat-list-item *ngFor="let postdata of postdatas " class="advice">
               <mat-icon mat-list-icon>sports_esports</mat-icon>
               <div mat-line>{{ postdata.topic }}</div>
-              <div mat-line>{{ postdata.description }}</div>
+              <div mat-line class="minimiz">{{ postdata.description }}</div>
               <button [routerLink]="['/posts',postdata._id]" mat-raised-button class="cl">
                 see more
               </button>

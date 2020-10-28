@@ -33,25 +33,28 @@
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col-md-12 mb-4">
-              <mat-list>
-                <mat-divider></mat-divider>
-                <mat-list-item *ngFor="let postdata of postdatas ">
-                  <div mat-line class="topic">{{ postdata.topic }} : {{ postdata.category }}</div>
-                  <div mat-line>{{ postdata.description }}</div>
-                  <button [routerLink]="['/posts',postdata._id]" mat-raised-button class="cl">
-                    see more
-                  </button>
-                  <button [routerLink]="['/edit',postdata._id]" mat-raised-button class="cl">
-                    edit
-                  </button>
-                  <button (click)="deleteData(postdata._id)" mat-raised-button class="cl">
-                    delete
-                  </button>
-                </mat-list-item>
-              </mat-list>
+              <div *ngFor="let postdata of postdatas ">
+                <div *ngIf="user_data._id == postdata.user_data">
+                  <mat-list>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                      <div mat-line class="topic">{{ postdata.topic }} : {{ postdata.category }}</div>
+                      <div mat-line>{{ postdata.description }}</div>
+                      <button [routerLink]="['/posts',postdata._id]" mat-raised-button class="cl">
+                        see more
+                      </button>
+                      <button [routerLink]="['/edit',postdata._id]" mat-raised-button class="cl">
+                        edit
+                      </button>
+                      <button (click)="deleteData(postdata._id)" mat-raised-button class="cl">
+                        delete
+                      </button>
+                    </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
             </div>
           </div>
         </div>
